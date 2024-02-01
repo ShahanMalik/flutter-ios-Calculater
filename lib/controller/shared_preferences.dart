@@ -8,24 +8,24 @@ class SP {
   Future<void> loadInputSPList() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     List<String> loadedList = prefs.getStringList('myStringList') ?? [];
-    inputList = loadedList.reversed.toList();
+    inputList = loadedList;
   }
 
   Future<void> addInputSP(String newString) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    inputList.add(newString);
+    inputList.insert(0, newString);
     await prefs.setStringList('myStringList', inputList);
   }
 
   Future<void> loadResultSPList() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     List<String> loadedList = prefs.getStringList('myinputList') ?? [];
-    ResultList = loadedList.reversed.toList();
+    ResultList = loadedList;
   }
 
   Future<void> addResultSp(String newString) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    ResultList.add(newString);
+    ResultList.insert(0, newString);
     await prefs.setStringList('myinputList', ResultList);
   }
 }
