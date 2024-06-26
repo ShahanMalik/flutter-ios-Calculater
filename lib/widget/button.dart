@@ -21,8 +21,8 @@ class CustomButton extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      width: width * 0.23,
-      height: height * 0.11,
+      width: height * 0.102,
+      height: height * 0.102,
       child: Material(
         color: index == 0 || index == 1 || index == 2
             ? ButtonColors.white
@@ -44,7 +44,6 @@ class CustomButton extends ConsumerWidget {
               Navigator.push(
                 context,
                 CupertinoPageRoute(
-                  fullscreenDialog: true,
                   builder: (context) => SharedPre(),
                 ),
               );
@@ -58,7 +57,7 @@ class CustomButton extends ConsumerWidget {
                   child: Icon(
                     CupertinoIcons.add,
                     color: Colors.white,
-                    size: height * 0.04,
+                    size: height * 0.043,
                   ),
                 )
               : index == 11
@@ -66,7 +65,7 @@ class CustomButton extends ConsumerWidget {
                       child: Icon(
                         Icons.remove,
                         color: Colors.white,
-                        size: height * 0.04,
+                        size: height * 0.043,
                       ),
                     )
                   : index == 7
@@ -74,7 +73,7 @@ class CustomButton extends ConsumerWidget {
                           child: Icon(
                             Icons.close,
                             color: Colors.white,
-                            size: height * 0.04,
+                            size: height * 0.043,
                           ),
                         )
                       : Center(
@@ -88,10 +87,16 @@ class CustomButton extends ConsumerWidget {
                                   : Color.fromARGB(255, 255, 251, 251),
                               fontSize: index == 18
                                   ? height * 0.03
-                                  : index == 1
-                                      ? height * 0.03
-                                      : height * 0.04,
-                              fontWeight: FontWeight.normal,
+                                  : index == 19
+                                      ? height * 0.050
+                                      : index == 0
+                                          ? height * 0.037
+                                          : index == 2
+                                              ? height * 0.042
+                                              : index == 1
+                                                  ? height * 0.03
+                                                  : height * 0.043,
+                              fontWeight: FontWeight.w400,
                             ),
                           ),
                         ),

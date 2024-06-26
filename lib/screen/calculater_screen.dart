@@ -58,16 +58,16 @@ class _CalculaterScreenState extends State<CalculaterScreen>
     final height = Constant.dh(context);
     final width = Constant.dw(context);
     return Scaffold(
-      backgroundColor: ButtonColors.dark2,
+      backgroundColor: Colors.black,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Expanded(
-            flex: 3,
+            flex: 4,
             child: Container(
               width: width,
               alignment: Alignment.bottomRight,
-              padding: EdgeInsets.symmetric(horizontal: width * 0.04),
+              padding: EdgeInsets.symmetric(horizontal: width * 0.08),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -79,9 +79,9 @@ class _CalculaterScreenState extends State<CalculaterScreen>
                         child: Text(
                           ref.watch(calculateProvider).toString(),
                           style: TextStyle(
-                            fontSize: height * 0.04,
-                            fontWeight: FontWeight.normal,
-                            color: ButtonColors.white2,
+                            fontSize: height * 0.032,
+                            fontWeight: FontWeight.w300,
+                            color: const Color.fromARGB(255, 255, 255, 255),
                           ),
                         ),
                       );
@@ -96,8 +96,8 @@ class _CalculaterScreenState extends State<CalculaterScreen>
                           result.toString(),
                           style: TextStyle(
                             fontSize: height * 0.09,
-                            fontWeight: FontWeight.normal,
-                            color: ButtonColors.white2,
+                            fontWeight: FontWeight.w300,
+                            color: ButtonColors.white,
                           ),
                         ),
                       );
@@ -108,7 +108,7 @@ class _CalculaterScreenState extends State<CalculaterScreen>
             ),
           ),
           Flexible(
-            flex: 8,
+            flex: 7,
             child: Padding(
               padding: const EdgeInsets.fromLTRB(0.1, 0, 0.1, 0),
               child: Column(
