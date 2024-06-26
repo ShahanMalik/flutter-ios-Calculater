@@ -33,21 +33,28 @@ class CalculateController extends StateNotifier {
         input == "9" ||
         input == "0" ||
         input == ".") {
+      print(isFirst.toString());
       assignValue += input;
       inputStatevalue += input;
       state = inputStatevalue;
       isFirst = true;
+      print(isFirst.toString());
     } else if (input == "+" ||
         input == "-" ||
         input == "x" ||
         input == "/" ||
-        input == "%" && isFirst) {
-      inputStringList.add(assignValue);
-      inputStringList.add(input);
-      assignValue = "";
-      inputStatevalue += input;
-      state = inputStatevalue;
-      isFirst = false;
+        input == "%") {
+      if (isFirst == true) {
+        print(isFirst.toString());
+
+        inputStringList.add(assignValue);
+        inputStringList.add(input);
+        assignValue = "";
+        inputStatevalue += input;
+        state = inputStatevalue;
+        isFirst = false;
+        print(isFirst.toString());
+      }
     } else if (input == "C") {
       result = 0;
       assignValue = "";
